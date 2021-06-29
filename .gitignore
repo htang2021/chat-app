@@ -6,6 +6,7 @@
 .pnp.js
 debug.log
 .env
+.eslintcache
 
 # testing
 /coverage
