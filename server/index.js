@@ -1,6 +1,7 @@
 const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
+const cors = require('cors');  // if deploying to www, need to include
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 
@@ -49,5 +50,6 @@ io.on('connection', (socket) => {
 
 
 app.use(router);
+app.use(cors());  // need to use if deploying it
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
